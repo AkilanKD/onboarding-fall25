@@ -28,7 +28,15 @@
                   rgba="1 0 0 1" />
             <!-- Left Front Shoulder -->
             <body name="shoulder_lf"
-                  pos="-0.2 -0.07 0">
+                  pos="-0.2 -0.05 0">
+                <joint name="upper_shoulder_lf"
+                       type="hinge"
+                       axis="1 0 0"
+                       pos="0 0.02 -0.02" />
+                  <site name="u_shoulder_joint_lf"
+                          pos="0 0.02 -0.02"
+                          size="0.01"
+                          rgba="0 0.25 0 1" />
                 <geom name="shoulder_lf_geom"
                       type="box"
                       size="0.05 0.02 0.02"
@@ -36,8 +44,8 @@
                       rgba="1 1 0 1" />
                 <!-- Left Front Upper Leg -->
                 <body name="upper_leg_lf"
-                      pos="0 -0.04 -0.05">
-                    <joint name="shoulder_j_lf"
+                      pos="0 -0.03 -0.05">
+                    <joint name="lower_shoulder_lf"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -69,10 +77,6 @@
                         <!-- Left front Foot -->
                         <body name="foot_lf"
                               pos="0 0 -0.05">
-                            <joint name="ankle_lf"
-                                   type="hinge"
-                                   axis="0 1 0"
-                                   pos="0.0 0 0" />
                             <geom name="foot_lf_geom"
                                   type="sphere"
                                   size="0.02"
@@ -83,7 +87,15 @@
             </body>
             <!-- Right Front Shoulder -->
             <body name="shoulder_rf"
-                  pos="-0.2 0.07 0">
+                  pos="-0.2 0.05 0">
+                <joint name="upper_shoulder_rf"
+                       type="hinge"
+                       axis="1 0 0"
+                       pos="0 -0.02 -0.02" />
+                  <site name="u_shoulder_joint_rf"
+                          pos="0 -0.02 -0.02"
+                          size="0.01"
+                          rgba="0 0.25 0 1" />
                 <geom name="shoulder_rf_geom"
                       type="box"
                       size="0.05 0.02 0.02"
@@ -91,8 +103,8 @@
                       rgba="1 1 0 1" />
                 <!-- Right Front Upper Leg -->
                 <body name="upper_leg_rf"
-                      pos="0 0.04 -0.05">
-                    <joint name="shoulder_j_rf"
+                      pos="0 0.03 -0.05">
+                    <joint name="lower_shoulder_rf"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -124,10 +136,6 @@
                         <!-- Right Front Foot -->
                         <body name="foot_rf"
                               pos="0 0 -0.05">
-                            <joint name="ankle_rf"
-                                   type="hinge"
-                                   axis="0 1 0"
-                                   pos="0.0 0 0" />
                             <geom name="foot_rf_geom"
                                   type="sphere"
                                   size="0.02"
@@ -138,7 +146,15 @@
             </body>
             <!-- Right Back Shoulder -->
             <body name="shoulder_lb"
-                  pos="0.2 -0.07 0">
+                  pos="0.2 -0.05 0">
+                <joint name="upper_shoulder_lb"
+                       type="hinge"
+                       axis="1 0 0"
+                       pos="0 0.02 -0.02" />
+                  <site name="u_shoulder_joint_lb"
+                          pos="0 0.02 -0.02"
+                          size="0.01"
+                          rgba="0 0.25 0 1" />
                 <geom name="shoulder_lb_geom"
                       type="box"
                       size="0.05 0.02 0.02"
@@ -146,8 +162,8 @@
                       rgba="1 1 0 1" />
                 <!-- Right Back Upper Leg -->
                 <body name="upper_leg_lb"
-                      pos="0 -0.04 -0.05">
-                    <joint name="shoulder_j_lb"
+                      pos="0 -0.03 -0.05">
+                    <joint name="lower_shoulder_lb"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -179,10 +195,6 @@
                         <!-- Right Back Foot -->
                         <body name="foot_lb"
                               pos="0 0 -0.05">
-                            <joint name="ankle_lb"
-                                   type="hinge"
-                                   axis="0 1 0"
-                                   pos="0.0 0 0" />
                             <geom name="foot_lb_geom"
                                   type="sphere"
                                   size="0.02"
@@ -193,7 +205,15 @@
             </body>
             <!-- Right Back Shoulder -->
             <body name="shoulder_rb"
-                  pos="0.2 0.07 0">
+                  pos="0.2 0.05 0">
+                  <joint name="upper_shoulder_rb"
+                       type="hinge"
+                       axis="1 0 0"
+                       pos="0 -0.02 -0.02" />
+                  <site name="u_shoulder_joint_rb"
+                          pos="0 -0.02 -0.02"
+                          size="0.01"
+                          rgba="0 0.25 0 1" />
                 <geom name="shoulder_rb_geom"
                       type="box"
                       size="0.05 0.02 0.02"
@@ -201,8 +221,8 @@
                       rgba="1 1 0 1" />
                 <!-- Right Back Upper Leg -->
                 <body name="upper_leg_rb"
-                      pos="0 0.04 -0.05">
-                    <joint name="shoulder_j_rb"
+                      pos="0 0.03 -0.05">
+                    <joint name="lower_shoulder_rb"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -234,10 +254,6 @@
                         <!-- Right Back Foot -->
                         <body name="foot_rb"
                               pos="0 0 -0.05">
-                            <joint name="ankle_rb"
-                                   type="hinge"
-                                   axis="0 1 0"
-                                   pos="0.0 0 0" />
                             <geom name="foot_rb_geom"
                                   type="sphere"
                                   size="0.02"
@@ -250,49 +266,48 @@
     </worldbody>
     <actuator>
         <!-- Left Front -->
-        <motor name="shoulder_motor_lf"
-               joint="shoulder_j_lf"
-               forcerange="0 20" />
+      <motor name="u_shoulder_motor_lf"
+               joint="upper_shoulder_lf"
+               forcerange="-20 20" />
+        <motor name="l_shoulder_motor_lf"
+               joint="lower_shoulder_lf"
+               forcerange="-20 20" />
         <motor name="knee_motor_lf"
                joint="knee_lf"
-               forcerange="0 20" />
-        <motor name="ankle_motor_lf"
-               joint="ankle_lf"
-               forcerange="0 20" />
+               forcerange="-20 20" />
         <!-- Right Front -->
-        <motor name="shoulder_motor_rf"
-               joint="shoulder_j_rf"
-               forcerange="0 20" />
+      <motor name="u_shoulder_motor_rf"
+               joint="upper_shoulder_rf"
+               forcerange="-20 20" />
+        <motor name="l_shoulder_motor_rf"
+               joint="lower_shoulder_rf"
+               forcerange="-20 20" />
         <motor name="knee_motor_rf"
                joint="knee_rf"
-               forcerange="0 20" />
-        <motor name="ankle_motor_rf"
-               joint="ankle_rf"
-               forcerange="0 20" />
+               forcerange="-20 20" />
         <!-- Left Back -->
-        <motor name="shoulder_motor_lb"
-               joint="shoulder_j_lb"
-               forcerange="0 20" />
+              <motor name="u_shoulder_motor_lb"
+               joint="upper_shoulder_lb"
+               forcerange="-20 20" />
+        <motor name="l_shoulder_motor_lb"
+               joint="lower_shoulder_lb"
+               forcerange="-20 20" />
         <motor name="knee_motor_lb"
                joint="knee_lb"
-               forcerange="0 20" />
-        <motor name="ankle_motor_lb"
-               joint="ankle_lb"
-               forcerange="0 20" />
+               forcerange="-20 20" />
         <!-- Right Back -->
-        <motor name="shoulder_motor_rb"
-               joint="shoulder_j_rb"
-               forcerange="0 20" />
+              <motor name="u_shoulder_motor_rb"
+               joint="upper_shoulder_rb"
+               forcerange="-20 20" />
+        <motor name="l_shoulder_motor_rb"
+               joint="lower_shoulder_rb"
+               forcerange="-20 20" />
         <motor name="knee_motor_rb"
                joint="knee_rb"
-               forcerange="0 20" />
-        <motor name="ankle_motor_rb"
-               joint="ankle_rb"
-               forcerange="0 20" />
+               forcerange="-20 20" />
     </actuator>
     <sensor>
-        <jointpos joint="shoulder_j_lf" />
+        <jointpos joint="lower_shoulder_lf" />
         <jointpos joint="knee_lf" />
-        <jointpos joint="ankle_lf" />
     </sensor>
 </mujoco>
