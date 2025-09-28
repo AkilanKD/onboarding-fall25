@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mujoco model="snake">
+    <compiler angle="degree" />
+    <option timestep="0.001"
+            gravity="0 0 -9.81" />
+    <default>
+        <equality solref="0.005 1" />
+        <geom type="box"
+              size="0.05 0.02 0.02"
+              density="500"
+              rgba="0.2 0.7 0.2 1" />
+        <joint limited="true"
+               range="-300 300"
+               damping="0.2"
+               stiffness="5" />
+        <motor ctrllimited="true"
+               ctrlrange="-3 3" />
+    </default>
+    <worldbody>
+        <!-- Segment 0 (root body) -->
+        <body name="body"
+              pos="0 0 0.3">
+            <freejoint name="root_free" />
+            <geom name="body_geom"
+                  type="box"
+                  size="0.2 0.03 0.03"
+                  pos="0 0 0"
+                  rgba="1 0 0 1" />
+            <!-- Left Front Shoulder -->
+            <body name="shoulder_lf"
+                  pos="-0.2 -0.07 0">
+                <geom name="shoulder_lf_geom"
+                      type="box"
+                      size="0.05 0.02 0.02"
+                      pos="0 0 0"
+                      rgba="1 1 0 1" />
+                <!-- Left Front Upper Leg -->
+                <body name="upper_leg_lf"
+                      pos="0 -0.04 -0.05">
+                    <joint name="shoulder_j_lf"
+                           type="hinge"
+                           axis="0 1 0"
+                           pos="0 0 0.05" />
+                    <site name="shoulder_joint_lf"
+                          pos="0 0 0.05"
+                          size="0.01"
+                          rgba="0 0.5 0 1" />
+                    <geom name="upper_leg_lf_geom"
+                          type="box"
+                          size="0.01 0.01 0.05"
+                          pos="0 0 0"
+                          rgba="0 1 0 1" />
+                    <!-- Left Front Lower Leg -->
+                    <body name="lower_leg_lf"
+                          pos="0 0.02 -0.10">
+                        <joint name="knee_lf"
+                               type="hinge"
+                               axis="0 1 0"
+                               pos="0 -0.01 0.05" />
+                        <site name="knee_joint_lf"
+                              pos="0 -0.01 0.05"
+                              size="0.01"
+                              rgba="0 0.5 0.5 1" />
+                        <geom name="lower_leg_lf_geom"
+                              type="box"
+                              size="0.01 0.01 0.05"
+                              pos="0 0 0"
+                              rgba="0 1 1 1" />
+                        <!-- Left front Foot -->
+                        <body name="foot_lf"
+                              pos="0 0 -0.05">
+                            <joint name="ankle_lf"
+                                   type="hinge"
+                                   axis="0 1 0"
+                                   pos="0.0 0 0" />
+                            <geom name="foot_lf_geom"
+                                  type="sphere"
+                                  size="0.02"
+                                  pos="0 0 0" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <!-- Right Front Shoulder -->
+            <body name="shoulder_rf"
+                  pos="-0.2 0.07 0">
+                <geom name="shoulder_rf_geom"
+                      type="box"
+                      size="0.05 0.02 0.02"
+                      pos="0 0 0"
+                      rgba="1 1 0 1" />
+                <!-- Right Front Upper Leg -->
+                <body name="upper_leg_rf"
+                      pos="0 0.04 -0.05">
+                    <joint name="shoulder_j_rf"
+                           type="hinge"
+                           axis="0 1 0"
+                           pos="0 0 0.05" />
+                    <site name="shoulder_joint_rf"
+                          pos="0 0 0.05"
+                          size="0.01"
+                          rgba="0 0.5 0 1" />
+                    <geom name="upper_leg_rf_geom"
+                          type="box"
+                          size="0.01 0.01 0.05"
+                          pos="0 0 0"
+                          rgba="0 1 0 1" />
+                    <!-- Right Front Lower Leg -->
+                    <body name="lower_leg_rf"
+                          pos="0 -0.02 -0.10">
+                        <joint name="knee_rf"
+                               type="hinge"
+                               axis="0 1 0"
+                               pos="0 0.01 0.05" />
+                        <site name="knee_joint_rf"
+                              pos="0 0.01 0.05"
+                              size="0.01"
+                              rgba="0 0.5 0.5 1" />
+                        <geom name="lower_leg_rf_geom"
+                              type="box"
+                              size="0.01 0.01 0.05"
+                              pos="0 0 0"
+                              rgba="0 1 1 1" />
+                        <!-- Right Front Foot -->
+                        <body name="foot_rf"
+                              pos="0 0 -0.05">
+                            <joint name="ankle_rf"
+                                   type="hinge"
+                                   axis="0 1 0"
+                                   pos="0.0 0 0" />
+                            <geom name="foot_rf_geom"
+                                  type="sphere"
+                                  size="0.02"
+                                  pos="0 0 0" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <!-- Right Back Shoulder -->
+            <body name="shoulder_lb"
+                  pos="0.2 -0.07 0">
+                <geom name="shoulder_lb_geom"
+                      type="box"
+                      size="0.05 0.02 0.02"
+                      pos="0 0 0"
+                      rgba="1 1 0 1" />
+                <!-- Right Back Upper Leg -->
+                <body name="upper_leg_lb"
+                      pos="0 -0.04 -0.05">
+                    <joint name="shoulder_j_lb"
+                           type="hinge"
+                           axis="0 1 0"
+                           pos="0 0 0.05" />
+                    <site name="shoulder_joint_lb"
+                          pos="0 0 0.05"
+                          size="0.01"
+                          rgba="0 0.5 0 1" />
+                    <geom name="upper_leg_lb_geom"
+                          type="box"
+                          size="0.01 0.01 0.05"
+                          pos="0 0 0"
+                          rgba="0 1 0 1" />
+                    <!-- Right Back Lower Leg -->
+                    <body name="lower_leg_lb"
+                          pos="0 0.02 -0.10">
+                        <joint name="knee_lb"
+                               type="hinge"
+                               axis="0 1 0"
+                               pos="0 -0.01 0.05" />
+                        <site name="knee_joint_lb"
+                              pos="0 -0.01 0.05"
+                              size="0.01"
+                              rgba="0 0.5 0.5 1" />
+                        <geom name="lower_leg_lb_geom"
+                              type="box"
+                              size="0.01 0.01 0.05"
+                              pos="0 0 0"
+                              rgba="0 1 1 1" />
+                        <!-- Right Back Foot -->
+                        <body name="foot_lb"
+                              pos="0 0 -0.05">
+                            <joint name="ankle_lb"
+                                   type="hinge"
+                                   axis="0 1 0"
+                                   pos="0.0 0 0" />
+                            <geom name="foot_lb_geom"
+                                  type="sphere"
+                                  size="0.02"
+                                  pos="0 0 0" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <!-- Right Back Shoulder -->
+            <body name="shoulder_rb"
+                  pos="0.2 0.07 0">
+                <geom name="shoulder_rb_geom"
+                      type="box"
+                      size="0.05 0.02 0.02"
+                      pos="0 0 0"
+                      rgba="1 1 0 1" />
+                <!-- Right Back Upper Leg -->
+                <body name="upper_leg_rb"
+                      pos="0 0.04 -0.05">
+                    <joint name="shoulder_j_rb"
+                           type="hinge"
+                           axis="0 1 0"
+                           pos="0 0 0.05" />
+                    <site name="shoulder_joint_rb"
+                          pos="0 0 0.05"
+                          size="0.01"
+                          rgba="0 0.5 0 1" />
+                    <geom name="upper_leg_rb_geom"
+                          type="box"
+                          size="0.01 0.01 0.05"
+                          pos="0 0 0"
+                          rgba="0 1 0 1" />
+                    <!-- Right Back Lower Leg -->
+                    <body name="lower_leg_rb"
+                          pos="0 -0.02 -0.10">
+                        <joint name="knee_rb"
+                               type="hinge"
+                               axis="0 1 0"
+                               pos="0 0.01 0.05" />
+                        <site name="knee_joint_rb"
+                              pos="0 0.01 0.05"
+                              size="0.01"
+                              rgba="0 0.5 0.5 1" />
+                        <geom name="lower_leg_rb_geom"
+                              type="box"
+                              size="0.01 0.01 0.05"
+                              pos="0 0 0"
+                              rgba="0 1 1 1" />
+                        <!-- Right Back Foot -->
+                        <body name="foot_rb"
+                              pos="0 0 -0.05">
+                            <joint name="ankle_rb"
+                                   type="hinge"
+                                   axis="0 1 0"
+                                   pos="0.0 0 0" />
+                            <geom name="foot_rb_geom"
+                                  type="sphere"
+                                  size="0.02"
+                                  pos="0 0 0" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <!-- Left Front -->
+        <motor name="shoulder_motor_lf"
+               joint="shoulder_j_lf"
+               forcerange="0 20" />
+        <motor name="knee_motor_lf"
+               joint="knee_lf"
+               forcerange="0 20" />
+        <motor name="ankle_motor_lf"
+               joint="ankle_lf"
+               forcerange="0 20" />
+        <!-- Right Front -->
+        <motor name="shoulder_motor_rf"
+               joint="shoulder_j_rf"
+               forcerange="0 20" />
+        <motor name="knee_motor_rf"
+               joint="knee_rf"
+               forcerange="0 20" />
+        <motor name="ankle_motor_rf"
+               joint="ankle_rf"
+               forcerange="0 20" />
+        <!-- Left Back -->
+        <motor name="shoulder_motor_lb"
+               joint="shoulder_j_lb"
+               forcerange="0 20" />
+        <motor name="knee_motor_lb"
+               joint="knee_lb"
+               forcerange="0 20" />
+        <motor name="ankle_motor_lb"
+               joint="ankle_lb"
+               forcerange="0 20" />
+        <!-- Right Back -->
+        <motor name="shoulder_motor_rb"
+               joint="shoulder_j_rb"
+               forcerange="0 20" />
+        <motor name="knee_motor_rb"
+               joint="knee_rb"
+               forcerange="0 20" />
+        <motor name="ankle_motor_rb"
+               joint="ankle_rb"
+               forcerange="0 20" />
+    </actuator>
+    <sensor>
+        <jointpos joint="shoulder_j_lf" />
+        <jointpos joint="knee_lf" />
+        <jointpos joint="ankle_lf" />
+    </sensor>
+</mujoco>
