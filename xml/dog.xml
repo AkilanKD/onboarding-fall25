@@ -29,7 +29,7 @@
             <!-- Left Front Shoulder -->
             <body name="shoulder_lf"
                   pos="-0.2 -0.05 0">
-                <joint name="upper_shoulder_lf"
+                <joint name="lf_upper_shoulder"
                        type="hinge"
                        axis="1 0 0"
                        pos="0 0.02 -0.02" />
@@ -45,7 +45,7 @@
                 <!-- Left Front Upper Leg -->
                 <body name="upper_leg_lf"
                       pos="0 -0.03 -0.05">
-                    <joint name="lower_shoulder_lf"
+                    <joint name="lf_lower_shoulder"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -61,7 +61,7 @@
                     <!-- Left Front Lower Leg -->
                     <body name="lower_leg_lf"
                           pos="0 0.02 -0.10">
-                        <joint name="knee_lf"
+                        <joint name="lf_knee"
                                type="hinge"
                                axis="0 1 0"
                                pos="0 -0.01 0.05" />
@@ -85,10 +85,11 @@
                     </body>
                 </body>
             </body>
+
             <!-- Right Front Shoulder -->
             <body name="shoulder_rf"
                   pos="-0.2 0.05 0">
-                <joint name="upper_shoulder_rf"
+                <joint name="rf_upper_shoulder"
                        type="hinge"
                        axis="1 0 0"
                        pos="0 -0.02 -0.02" />
@@ -104,7 +105,7 @@
                 <!-- Right Front Upper Leg -->
                 <body name="upper_leg_rf"
                       pos="0 0.03 -0.05">
-                    <joint name="lower_shoulder_rf"
+                    <joint name="rf_lower_shoulder"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -120,7 +121,7 @@
                     <!-- Right Front Lower Leg -->
                     <body name="lower_leg_rf"
                           pos="0 -0.02 -0.10">
-                        <joint name="knee_rf"
+                        <joint name="rf_knee"
                                type="hinge"
                                axis="0 1 0"
                                pos="0 0.01 0.05" />
@@ -144,10 +145,11 @@
                     </body>
                 </body>
             </body>
-            <!-- Right Back Shoulder -->
+
+            <!-- Left Back Shoulder -->
             <body name="shoulder_lb"
                   pos="0.2 -0.05 0">
-                <joint name="upper_shoulder_lb"
+                <joint name="lb_upper_shoulder"
                        type="hinge"
                        axis="1 0 0"
                        pos="0 0.02 -0.02" />
@@ -160,10 +162,10 @@
                       size="0.05 0.02 0.02"
                       pos="0 0 0"
                       rgba="1 1 0 1" />
-                <!-- Right Back Upper Leg -->
+                <!-- Left Back Upper Leg -->
                 <body name="upper_leg_lb"
                       pos="0 -0.03 -0.05">
-                    <joint name="lower_shoulder_lb"
+                    <joint name="lb_lower_shoulder"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -176,10 +178,10 @@
                           size="0.01 0.01 0.05"
                           pos="0 0 0"
                           rgba="0 1 0 1" />
-                    <!-- Right Back Lower Leg -->
+                    <!-- Left Back Lower Leg -->
                     <body name="lower_leg_lb"
                           pos="0 0.02 -0.10">
-                        <joint name="knee_lb"
+                        <joint name="lb_knee"
                                type="hinge"
                                axis="0 1 0"
                                pos="0 -0.01 0.05" />
@@ -192,7 +194,7 @@
                               size="0.01 0.01 0.05"
                               pos="0 0 0"
                               rgba="0 1 1 1" />
-                        <!-- Right Back Foot -->
+                        <!-- Left Back Foot -->
                         <body name="foot_lb"
                               pos="0 0 -0.05">
                             <geom name="foot_lb_geom"
@@ -203,10 +205,11 @@
                     </body>
                 </body>
             </body>
+
             <!-- Right Back Shoulder -->
             <body name="shoulder_rb"
                   pos="0.2 0.05 0">
-                  <joint name="upper_shoulder_rb"
+                  <joint name="rb_upper_shoulder"
                        type="hinge"
                        axis="1 0 0"
                        pos="0 -0.02 -0.02" />
@@ -222,7 +225,7 @@
                 <!-- Right Back Upper Leg -->
                 <body name="upper_leg_rb"
                       pos="0 0.03 -0.05">
-                    <joint name="lower_shoulder_rb"
+                    <joint name="rb_lower_shoulder"
                            type="hinge"
                            axis="0 1 0"
                            pos="0 0 0.05" />
@@ -238,7 +241,7 @@
                     <!-- Right Back Lower Leg -->
                     <body name="lower_leg_rb"
                           pos="0 -0.02 -0.10">
-                        <joint name="knee_rb"
+                        <joint name="rb_knee"
                                type="hinge"
                                axis="0 1 0"
                                pos="0 0.01 0.05" />
@@ -264,50 +267,52 @@
             </body>
         </body>
     </worldbody>
+
     <actuator>
         <!-- Left Front -->
-      <motor name="u_shoulder_motor_lf"
-               joint="upper_shoulder_lf"
+      <motor name="lf_u_shoulder_motor"
+               joint="lf_upper_shoulder"
                forcerange="-20 20" />
-        <motor name="l_shoulder_motor_lf"
-               joint="lower_shoulder_lf"
+        <motor name="lf_l_shoulder_motor"
+               joint="lf_lower_shoulder"
                forcerange="-20 20" />
-        <motor name="knee_motor_lf"
-               joint="knee_lf"
+        <motor name="lf_knee_motor"
+               joint="lf_knee"
                forcerange="-20 20" />
         <!-- Right Front -->
-      <motor name="u_shoulder_motor_rf"
-               joint="upper_shoulder_rf"
+      <motor name="rf_u_shoulder_motor"
+               joint="rf_upper_shoulder"
                forcerange="-20 20" />
-        <motor name="l_shoulder_motor_rf"
-               joint="lower_shoulder_rf"
+        <motor name="rf_l_shoulder_motor"
+               joint="rf_lower_shoulder"
                forcerange="-20 20" />
-        <motor name="knee_motor_rf"
-               joint="knee_rf"
+        <motor name="rf_knee_motor"
+               joint="rf_knee"
                forcerange="-20 20" />
         <!-- Left Back -->
-              <motor name="u_shoulder_motor_lb"
-               joint="upper_shoulder_lb"
+              <motor name="lb_u_shoulder_motor"
+               joint="lb_upper_shoulder"
                forcerange="-20 20" />
-        <motor name="l_shoulder_motor_lb"
-               joint="lower_shoulder_lb"
+        <motor name="lb_l_shoulder_motor"
+               joint="lb_lower_shoulder"
                forcerange="-20 20" />
-        <motor name="knee_motor_lb"
-               joint="knee_lb"
+        <motor name="lb_knee_motor"
+               joint="lb_knee"
                forcerange="-20 20" />
         <!-- Right Back -->
-              <motor name="u_shoulder_motor_rb"
-               joint="upper_shoulder_rb"
+              <motor name="rb_u_shoulder_motor"
+               joint="rb_upper_shoulder"
                forcerange="-20 20" />
-        <motor name="l_shoulder_motor_rb"
-               joint="lower_shoulder_rb"
+        <motor name="rb_l_shoulder_motor"
+               joint="rb_lower_shoulder"
                forcerange="-20 20" />
-        <motor name="knee_motor_rb"
-               joint="knee_rb"
+        <motor name="rb_knee_motor"
+               joint="rb_knee"
                forcerange="-20 20" />
     </actuator>
+
     <sensor>
-        <jointpos joint="lower_shoulder_lf" />
-        <jointpos joint="knee_lf" />
+        <jointpos joint="lf_lower_shoulder" />
+        <jointpos joint="lf_knee" />
     </sensor>
 </mujoco>
